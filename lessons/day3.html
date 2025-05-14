@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Day 3</title><link rel="stylesheet" href="../styles.css" /></head>
+<body class="p-6">
+<h1 class="text-3xl font-bold mb-2">Day 3 – Polish and Publish</h1>
+<ul class="list-disc ml-6">
+  <li>Add background music and sound effects</li>
+  <li>Create win condition and display "You Win" screen</li>
+  <li>Design a Main Menu scene with Start/Quit buttons</li>
+  <li>Build game to WebGL (no login required)</li>
+  <li>Optionally upload game to GitHub Pages or itch.io</li>
+</ul>
+<input type="checkbox" id="completeDay3"> Mark Day 3 Complete
+<script>
+document.getElementById("completeDay3").addEventListener("change", async (e) => {
+  if (!e.target.checked) return;
+  await fetch("/api/progress.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ day: "day3" })
+  });
+});
+</script>
+</body>
+</html>

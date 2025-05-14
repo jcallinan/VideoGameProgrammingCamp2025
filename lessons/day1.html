@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Day 1</title><link rel="stylesheet" href="../styles.css" /></head>
+<body class="p-6">
+<h1 class="text-3xl font-bold mb-2">Day 1 – Game Basics</h1>
+<ul class="list-disc ml-6">
+  <li>Install Unity Hub and Unity Editor (2022+)</li>
+  <li>Create a new 3D project</li>
+  <li>Explore Unity interface: Scene, Game, Inspector</li>
+  <li>Create terrain and a Player cube</li>
+  <li>Write PlayerMovement.cs script (WASD/Arrow keys)</li>
+  <li>Attach Main Camera to follow player</li>
+</ul>
+<input type="checkbox" id="completeDay1"> Mark Day 1 Complete
+<script>
+document.getElementById("completeDay1").addEventListener("change", async (e) => {
+  if (!e.target.checked) return;
+  await fetch("/api/progress.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ day: "day1" })
+  });
+});
+</script>
+</body>
+</html>
