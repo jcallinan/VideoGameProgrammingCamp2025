@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Summer Game Camp WebGL</title>
-  <script src="Build/UnityLoader.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="Build/UnityLoader.js"></script> <!-- Change based on your .loader.js filename -->
 </head>
 <body>
-  <div id="unityContainer" style="width: 960px; height: 600px;"></div>
+  <div id="unityContainer" style="width: 960px; height: 600px"></div>
   <script>
-    UnityLoader.instantiate("unityContainer", "Build/Build.json");
+    createUnityInstance(document.querySelector("#unityContainer"), {
+      dataUrl: "Build/game.data",
+      frameworkUrl: "Build/game.framework.js",
+      codeUrl: "Build/game.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Your Company",
+      productName: "Summer Game Camp",
+      productVersion: "1.0"
+    });
   </script>
 </body>
 </html>
