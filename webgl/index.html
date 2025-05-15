@@ -1,1 +1,14 @@
-<html><body><h1>Summer Game Camp WebGL Game</h1><p>Build files go here.</p></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Summer Game Camp WebGL</title>
+  <script src="Build/UnityLoader.js"></script>
+</head>
+<body>
+  <div id="unityContainer" style="width: 960px; height: 600px;"></div>
+  <script>
+    UnityLoader.instantiate("unityContainer", "Build/Build.json");
+  </script>
+</body>
+</html>

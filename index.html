@@ -1,3 +1,4 @@
+<!-- Template applied to all pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,32 +10,34 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #ffffff;
-      color: #182854;
+      color: #1a1a1a;
     }
     h1, h2 {
       font-family: Georgia, serif;
       color: #9A936B;
     }
     a {
-      color: #FFFF00;
+      color: #0056b3;
     }
-    .button {
-      background-color: #182854;
-      color: #fff;
+    a.button, .button {
+      background-color: #002d72;
+      color: #fff !important;
       padding: 10px 20px;
       border-radius: 5px;
       text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
     }
     .button:hover {
       background-color: #9A936B;
-      color: #000;
+      color: #000 !important;
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      background-color: #182854;
+      background-color: #002d72;
       color: white;
     }
     header img {
@@ -42,34 +45,143 @@
     }
     nav a {
       margin: 0 10px;
-      color: #fff;
+      color: #ffffff;
       text-decoration: none;
+      font-weight: bold;
     }
     nav a:hover {
       text-decoration: underline;
     }
+    .lesson-steps {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+    }
+    .lesson-steps h2 {
+      color: #182854;
+    }
+    .lesson-steps ol {
+      padding-left: 1.5rem;
+    }
+    input[type="text"], input[type="password"] {
+      padding: 8px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 8px;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    table.schedule {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    table.schedule th, table.schedule td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    table.schedule th {
+      background-color: #f0f0f0;
+    }
   </style>
 </head>
-<body class="p-6">
-  <header>
-    <img src="/assets/pitt-bradford-logo.png" alt="Pitt-Bradford Logo" />
+<body>
+<header style="background-color: #002D72; padding: 20px;">
+  <div style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: auto;">
+    <div style="display: flex; align-items: center;">
+      <img src="/assets/pitt-bradford-logo.png" alt="Pitt-Bradford Logo" style="height: 50px; margin-right: 15px;">
+      <h1 style="color: white; margin: 0; font-size: 1.5rem;">Summer Game Development Camp</h1>
+    </div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="register.html">Register</a>
-      <a href="day1.html">Lessons</a>
-      <a href="/admin/admin.php">Admin</a>
+      <a href="index.html" style="color: white; margin: 0 10px; text-decoration: none;">Home</a>
+      <a href="register.html" style="color: white; margin: 0 10px; text-decoration: none;">Register</a>
+      <a href="day1.html" style="color: white; margin: 0 10px; text-decoration: none;">Day 1</a>
+      <a href="day2.html" style="color: white; margin: 0 10px; text-decoration: none;">Day 2</a>
+      <a href="day3.html" style="color: white; margin: 0 10px; text-decoration: none;">Day 3</a>
+      <a href="/admin/admin.php" style="color: white; margin: 0 10px; text-decoration: none;">Admin</a>
     </nav>
-  </header>
+  </div>
+</header>
+
 
   <main>
     <h1 class="text-4xl font-bold mb-4">Welcome to the Summer Game Development Camp</h1>
     <p class="text-lg mb-4">Hosted by the University of Pittsburgh at Bradford's CIST Program</p>
     <form id="login-form">
-      <input type="text" id="name" placeholder="Enter your name" required class="border p-2 rounded mr-2" />
-      <input type="password" id="code" placeholder="Enter camp code" required class="border p-2 rounded mr-2" />
+      <input type="text" id="name" placeholder="Enter your name" required />
+      <input type="password" id="code" placeholder="Enter camp code" required />
       <button type="submit" class="button">Enter</button>
     </form>
     <p class="mt-4">Don't have an account? <a href="register.html">Create one here</a></p>
+    <p><a class="button" href="webgl/index.html">Play the Camp Game now!</a></p>
+
+    <h2 class="text-2xl font-bold mt-10">Camp Schedule</h2>
+    <table class="schedule">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Activities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>June 9</td>
+          <td>9:00am – 12:00pm</td>
+          <td>Intro to Unity, Terrain, Movement Scripting (Day 1)</td>
+        </tr>
+        <tr>
+          <td>June 11</td>
+          <td>9:00am – 12:00pm</td>
+          <td>Jumping, Collectibles, UI + 3D Model Import (Day 2)</td>
+        </tr>
+        <tr>
+          <td>June 13</td>
+          <td>9:00am – 12:00pm</td>
+          <td>Menus, Polish, WebGL Export, Game Completion (Day 3)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="lesson-steps">
+      <h2>Day 1 – Unity Basics</h2>
+      <ol>
+        <li>Install Unity Hub and Unity Editor (2022+)</li>
+        <li>Create a new 3D project and name it "SummerCampGame"</li>
+        <li>Open the default scene, add a Plane and Cube (rename to "Player")</li>
+        <li>Add Rigidbody to Player object</li>
+        <li>Create and attach PlayerMovement.cs script</li>
+        <li>Write movement code for WASD / Arrow keys</li>
+        <li>Attach the Main Camera to follow the Player</li>
+        <li>Test basic movement in Play mode</li>
+      </ol>
+
+      <h2>Day 2 – Interaction & Modeling</h2>
+      <ol>
+        <li>Add jump functionality to PlayerMovement.cs</li>
+        <li>Create a Collectible prefab with a trigger collider</li>
+        <li>Write Collectible.cs to destroy object and call GameManager</li>
+        <li>Create UI with TextMeshPro to show score</li>
+        <li>Import simple 3D assets or design in Blender</li>
+        <li>Arrange objects in scene to form level layout</li>
+      </ol>
+
+      <h2>Day 3 – Polish & Publish</h2>
+      <ol>
+        <li>Create Main Menu scene with buttons (Start, Quit)</li>
+        <li>Set up MenuManager.cs script for button actions</li>
+        <li>Build a win condition and trigger scene change</li>
+        <li>Design a Win scene with message and Restart button</li>
+        <li>Build project for WebGL (File > Build Settings > WebGL)</li>
+        <li>Upload to itch.io or GitHub Pages for publishing</li>
+      </ol>
+    </section>
   </main>
 
   <script src="js/main.js"></script>
