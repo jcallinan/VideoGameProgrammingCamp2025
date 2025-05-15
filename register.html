@@ -3,17 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register for Summer Camp</title>
+  <title>Register for Summer Game Camp</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="p-6">
-  <h1 class="text-3xl font-bold mb-4">Register for Summer Game Camp</h1>
-  <form id="register-form">
-    <input type="text" id="reg-name" placeholder="Your name" required class="border p-2 rounded mr-2" />
-    <input type="password" id="reg-code" placeholder="Set a camp code" required class="border p-2 rounded mr-2" />
-    <button type="submit" class="bg-green-600 text-white p-2 rounded">Register</button>
-  </form>
-  <p class="mt-4">Already registered? <a href="index.html" class="text-blue-700 underline">Login here</a></p>
+  <header>
+    <img src="/assets/pitt-bradford-logo.png" alt="Pitt-Bradford Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="day1.html">Lessons</a>
+      <a href="/admin/admin.php">Admin</a>
+    </nav>
+  </header>
+  <main>
+    <h1 class="text-3xl font-bold mb-4">Register for Summer Game Camp</h1>
+    <form id="register-form">
+      <input type="text" id="reg-name" placeholder="Your name" required class="border p-2 rounded mr-2" />
+      <input type="password" id="reg-code" placeholder="Set a camp code" required class="border p-2 rounded mr-2" />
+      <button type="submit" class="bg-green-600 text-white p-2 rounded">Register</button>
+    </form>
+    <p class="mt-4">Already registered? <a href="index.html" class="text-blue-700 underline">Login here</a></p>
+  </main>
   <script>
     document.getElementById("register-form").addEventListener("submit", async (e) => {
       e.preventDefault();
