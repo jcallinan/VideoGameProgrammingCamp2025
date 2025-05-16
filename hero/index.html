@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Scrolling Logo in Masked Area</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Load the images (replace with actual image paths or base64 data)
+        const mountainImage = new Image();
+        mountainImage.src = 'mountain_image.jpg'; // Replace with actual mountain image path
+        const logoImage = new Image();
+        logoImage.src = 'logo_image.jpg'; // Replace with actual logo image path
+
+        // Set canvas size to match the mountain image
+        mountainImage.onload = () => {
+            canvas.width = mountainImage.width;
+            canvas.height = mountainImage.height;
+
+            // Define the black box area for masking
+            const maskX = 242; // Starting x position of the black box
+            const maskY = 510; // Starting y position of the black box
+            const maskWidth = 277; // Width of the black box
+            const maskHeight = 106; // Height of the black box
+
+            // Logo animation variables
+            const logoX = maskX + (maskWidth - logoImage.width) / 2; // Center horizontally in the black box
+            let logoY = maskY; // Start at the top of the mask
+            const speed = 2; // Speed of the scrolling
+            const loopHeight = logoImage.height; // Height of the repeating segment
+
+            function animate() {
+                // Clear the canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Draw the mountain image
+                ctx.drawImage(mountainImage, 0, 0);
+
+                // Create a clipping region for the black box
+                ctx.save();
+                ctx.beginPath();
+                ctx.rect(maskX, maskY, maskWidth, maskHeight);
+                ctx.clip();
+
+                // Normalize logoY to create a seamless loop
+                logoY = maskY + (logoY - maskY) % loopHeight;
+                if (logoY > maskY) {
+                    logoY -= loopHeight; // Adjust to keep within the loop range
+                }
+
+                // Draw the logo multiple times to cover the mask area seamlessly
+                let currentY = logoY;
+                while (currentY < maskY + maskHeight) {
+                    ctx.drawImage(logoImage, logoX, currentY);
+                    currentY += loopHeight;
+                }
+
+                // Restore the context to remove the clipping region
+                ctx.restore();
+
+                // Update logo position for vertical scrolling
+                logoY += speed;
+
+                // Request the next animation frame
+                requestAnimationFrame(animate);
+            }
+
+            // Start the animation once the logo image is loaded
+            logoImage.onload = () => {
+                animate();
+            };
+        };
+    </script>
+</body>
+</html>
