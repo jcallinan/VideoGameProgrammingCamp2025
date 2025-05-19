@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cosmic Jungle Game Dev Camp</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f0f8ff; color: #1a1a1a; }
+    h1 { color: #002D72; }
+    h2 { color: #0056b3; }
+    ol { padding-left: 20px; }
+    section { margin-bottom: 40px; }
+  </style>
+</head>
+<body>
+  <h1>Treasure Hunt in the Cosmic Jungle</h1>
+  <p><strong>Theme:</strong> You're a space explorer stranded in an alien jungle. Collect the Cosmic Gems to power the portal and escape before time runs out!</p>
+
+  <section>
+    <h2>Day 1 – Movement & Environment</h2>
+    <ol>
+      <li>Install Unity Hub and Unity 2022.3 LTS.</li>
+      <li>Create a 3D project named <code>CosmicJungleGame</code>.</li>
+      <li>Add a Plane, rename to <code>AlienGround</code>, color dark purple or green.</li>
+      <li>Create a Cube for your player, add a Rigidbody, and tag it <code>Player</code>.</li>
+      <li>Attach <code>PlayerMovement.cs</code> script to your player.</li>
+      <li>Set the Main Camera to follow the player using a follow script or manually.</li>
+      <li>Add colored lights and skybox to create jungle atmosphere.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Day 2 – Collectibles & UI</h2>
+    <ol>
+      <li>Create a Collectible object using a sphere or crystal, add glowing material.</li>
+      <li>Add <code>Collectible.cs</code> and attach a magical <code>sparkleSound</code> audio clip.</li>
+      <li>Create a Canvas with TextMeshPro text elements: one for score, one for timer.</li>
+      <li>Create a GameManager object, add <code>GameManager.cs</code>, and set totalGems.</li>
+      <li>Drag Text objects into the GameManager inspector.</li>
+      <li>Test gameplay: walk around, collect gems, hear sparkle sound, see score update.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Day 3 – Menus, Win, Lose, Polish</h2>
+    <ol>
+      <li>Create <code>MenuScene</code> with title, subtitle, and a Start button (MenuManager.cs).</li>
+      <li>Build <code>WinScene</code> with message and Play Again button.</li>
+      <li>Create <code>LoseScene</code> with timeout message and retry button.</li>
+      <li>Add portal object to MainScene, attach <code>WinTrigger.cs</code>.</li>
+      <li>Add ambient jungle sound to MainScene.</li>
+      <li>Go to File > Build Settings, add all 4 scenes in order: MenuScene, MainScene, WinScene, LoseScene.</li>
+      <li>Set MenuScene as your default start scene.</li>
+      <li>Playtest the entire game: Start > Collect gems > Win or timeout > Retry</li>
+    </ol>
+  </section>
+</body>
+</html>

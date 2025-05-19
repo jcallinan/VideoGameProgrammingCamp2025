@@ -1,1 +1,26 @@
-<!DOCTYPE html><html><head><title>Day 2</title></head><body><h1>Day 2 – Gameplay Elements</h1><p>Jumping, collectibles, and 3D model imports</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Day 2 - Collectibles and UI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Day 2 – Cosmic Gems, Sparkles, and Score</h1>
+  <p>Today, you'll make glowing gems the player can collect, add sounds, and display score and time.</p>
+  <ol>
+    <li>Create a <strong>Sphere</strong> in the scene. Scale it to 0.5 and apply a glowing material (enable Emission).</li>
+    <li>Add a <strong>Box Collider</strong>, check <strong>Is Trigger</strong>.</li>
+    <li>Attach <code>Collectible.cs</code> to the object.</li>
+    <li>Assign a sparkle sound to the <code>sparkleSound</code> field in the Inspector.</li>
+    <li>Duplicate the gem and spread several around the terrain.</li>
+    <li>Create an empty GameObject named <code>GameManager</code>.</li>
+    <li>Attach <code>GameManager.cs</code>. Set <code>totalGems</code> to the number of gems placed.</li>
+    <li>Add a <strong>Canvas</strong> to the scene.</li>
+    <li>Right-click the Canvas → UI → TextMeshPro - Text. Name it <code>ScoreText</code>.</li>
+    <li>Create a second TMP Text named <code>TimerText</code>.</li>
+    <li>Drag ScoreText and TimerText into the GameManager’s inspector fields.</li>
+    <li>Press <strong>Play</strong>. Walk into a gem. It should disappear, play sound, and update the score!</li>
+  </ol>
+</body>
+</html>

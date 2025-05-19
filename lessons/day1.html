@@ -1,1 +1,26 @@
-<!DOCTYPE html><html><head><title>Day 1</title></head><body><h1>Day 1 – Unity Basics</h1><p>Setup Unity, terrain, and player movement</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Day 1 - Unity Setup & Movement</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Day 1 – Unity Setup & Movement</h1>
+  <p>Today, you'll set up your Unity project and create a player that can move around the alien jungle.</p>
+  <ol>
+    <li>Install <strong>Unity Hub</strong> and Unity Editor <code>2022.3 LTS</code>.</li>
+    <li>Create a new 3D project called <code>CosmicJungleGame</code>.</li>
+    <li>In the Hierarchy, right-click and add a <strong>3D Object → Plane</strong>. Rename it <code>AlienGround</code>.</li>
+    <li>Color the ground purple or green using the <strong>Inspector → Mesh Renderer → Materials</strong>.</li>
+    <li>Add a <strong>Cube</strong> for your player and rename it <code>Player</code>.</li>
+    <li>Click the Player cube, then go to <strong>Inspector → Add Component → Rigidbody</strong>.</li>
+    <li>Tag the Player as <code>Player</code> under the Tag dropdown at the top.</li>
+    <li>Create a script named <code>PlayerMovement.cs</code> and paste in the movement code.</li>
+    <li>Attach <code>PlayerMovement.cs</code> to the Player GameObject.</li>
+    <li>Adjust the camera to follow behind the player, or use a follow script.</li>
+    <li>Add colorful lights or a spacey skybox to give it a cosmic jungle vibe.</li>
+    <li>Press <strong>Play</strong> and walk around using <strong>WASD</strong> or arrow keys.</li>
+  </ol>
+</body>
+</html>
