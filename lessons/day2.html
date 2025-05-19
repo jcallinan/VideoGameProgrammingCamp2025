@@ -6,21 +6,36 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Day 2 – Cosmic Gems, Sparkles, and Score</h1>
-  <p>Today, you'll make glowing gems the player can collect, add sounds, and display score and time.</p>
+  <h1>Day 2 – Cosmic Gems and Score</h1>
+  <p>Today you’ll make your collectibles come alive with glowing effects and add a scoring system that shows your progress.</p>
   <ol>
-    <li>Create a <strong>Sphere</strong> in the scene. Scale it to 0.5 and apply a glowing material (enable Emission).</li>
-    <li>Add a <strong>Box Collider</strong>, check <strong>Is Trigger</strong>.</li>
-    <li>Attach <code>Collectible.cs</code> to the object.</li>
-    <li>Assign a sparkle sound to the <code>sparkleSound</code> field in the Inspector.</li>
-    <li>Duplicate the gem and spread several around the terrain.</li>
-    <li>Create an empty GameObject named <code>GameManager</code>.</li>
-    <li>Attach <code>GameManager.cs</code>. Set <code>totalGems</code> to the number of gems placed.</li>
-    <li>Add a <strong>Canvas</strong> to the scene.</li>
-    <li>Right-click the Canvas → UI → TextMeshPro - Text. Name it <code>ScoreText</code>.</li>
-    <li>Create a second TMP Text named <code>TimerText</code>.</li>
-    <li>Drag ScoreText and TimerText into the GameManager’s inspector fields.</li>
-    <li>Press <strong>Play</strong>. Walk into a gem. It should disappear, play sound, and update the score!</li>
+    <li>In the Hierarchy, right-click → 3D Object → <strong>Sphere</strong>. Rename it to <code>CosmicGem</code> and scale it down to <code>0.5</code>.</li>
+    <li>Create a new material: In the Project window, right-click → Create → Material → Name it <code>GemMaterial</code>.</li>
+    <li>Select <code>GemMaterial</code>, then in the Inspector:
+      <ul>
+        <li>Click the white color swatch under <strong>Albedo</strong> and choose a bright color (like cyan or magenta).</li>
+        <li>Scroll down and check the <strong>Emission</strong> box.</li>
+        <li>Click the color box next to <strong>Emission</strong> and select a glowing color (brighter version of Albedo).</li>
+        <li>Increase the intensity slider if needed until it glows in Scene view.</li>
+      </ul>
+    </li>
+    <li>Drag <code>GemMaterial</code> onto your <code>CosmicGem</code> sphere in the Hierarchy.</li>
+    <li><strong>Optional Glow Particles:</strong> Select <code>CosmicGem</code>, then right-click → Effects → <strong>Particle System</strong>.</li>
+    <li>In the Inspector for the Particle System:
+      <ul>
+        <li>Change <code>Start Lifetime</code> to <code>0.5</code>, <code>Start Speed</code> to <code>0.5</code>, <code>Start Size</code> to <code>0.3</code>.</li>
+        <li>Set <strong>Max Particles</strong> to <code>50</code>.</li>
+      </ul>
+    </li>
+    <li>Add a <strong>Box Collider</strong> (Is Trigger = true).</li>
+    <li>Attach <code>Collectible.cs</code> and assign a sparkle sound to <code>sparkleSound</code> in the Inspector.</li>
+    <li>Duplicate the gem around the level. Vary their Y-position slightly to make them hover.</li>
+    <li>In the Hierarchy: Create → UI → Canvas → Add <strong>TextMeshPro - Text</strong>. Click 'Import TMP Essentials' when that pops up (only have to do this once per project). Name it <code>ScoreText</code>.</li>
+    <li>Repeat and create <strong>TimerText</strong>. Style them to match the sci-fi theme (top-left corner, large white font).</li>
+    <li>Create an empty GameObject → name it <code>GameManager</code> → attach <code>GameManager.cs</code>.</li>
+    <li>Set <code>totalGems</code> to match the number of gems placed in the scene.</li>
+    <li>Drag <code>ScoreText</code> and <code>TimerText</code> into the appropriate fields on GameManager.</li>
+    <li>Press <strong>Play</strong>. Walk into a Cosmic Gem. It should disappear, play the sparkle, and update your score and timer!</li>
   </ol>
 </body>
 </html>

@@ -9,18 +9,17 @@
   <h1>Day 1 – Unity Setup & Movement</h1>
   <p>Today, you'll set up your Unity project and create a player that can move around the alien jungle.</p>
   <ol>
-    <li>Install <strong>Unity Hub</strong> and Unity Editor <code>2022.3 LTS</code>.</li>
-    <li>Create a new 3D project called <code>CosmicJungleGame</code>.</li>
-    <li>In the Hierarchy, right-click and add a <strong>3D Object → Plane</strong>. Rename it <code>AlienGround</code>.</li>
-    <li>Color the ground purple or green using the <strong>Inspector → Mesh Renderer → Materials</strong>.</li>
-    <li>Add a <strong>Cube</strong> for your player and rename it <code>Player</code>.</li>
-    <li>Click the Player cube, then go to <strong>Inspector → Add Component → Rigidbody</strong>.</li>
-    <li>Tag the Player as <code>Player</code> under the Tag dropdown at the top.</li>
-    <li>Create a script named <code>PlayerMovement.cs</code> and paste in the movement code.</li>
-    <li>Attach <code>PlayerMovement.cs</code> to the Player GameObject.</li>
-    <li>Adjust the camera to follow behind the player, or use a follow script.</li>
-    <li>Add colorful lights or a spacey skybox to give it a cosmic jungle vibe.</li>
-    <li>Press <strong>Play</strong> and walk around using <strong>WASD</strong> or arrow keys.</li>
+     <li>Open Unity Hub and create a new 3D project named <code>CosmicJungleGame</code> using Unity 2022.3 LTS.</li>
+    <li>Create and save a new scene called <code>MainScene</code>.</li>
+    <li>In the Hierarchy, right-click → 3D Object → <strong>Plane</strong>. Rename it <code>AlienGround</code>.</li>
+    <li>Assign it a new material with dark purple or green color. Add it to a new Layer called <code>Ground</code>.</li>
+    <li>Right-click → 3D Object → <strong>Cube</strong>. Rename it <code>Player</code>.</li>
+    <li>Add a Rigidbody and check <code>Freeze Rotation X, Y, Z</code>. Set Drag and Angular Drag to 1.</li>
+    <li>Tag it <code>Player</code>. Create a LayerMask called <code>Ground</code> and assign it to AlienGround.</li>
+    <li>Right-click on Player → Create Empty → name it <code>GroundCheck</code>. Move it to Y = -0.6 under the cube.</li>
+    <li>Create and attach <code>PlayerMovement.cs</code> using the provided script. Fill in the <code>groundCheck</code> and <code>groundMask</code> fields in the Inspector.</li>
+    <li>Select <code>Main Camera</code>, add <code>CameraFollow.cs</code> and set the <code>target</code> to <code>Player</code>.</li>
+    <li>Adjust the camera offset to Y = 5, Z = -10. Press <strong>Play</strong> and test walking and jumping.</li>
   </ol>
 </body>
 </html>

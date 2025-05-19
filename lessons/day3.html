@@ -6,21 +6,25 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Day 3 – Menus, Portal, and Game Polish</h1>
-  <p>Today, you'll build the full game flow and finish with a playable camp-ready version!</p>
+ <h1>Day 3 – Menus, Portal, Win and Lose</h1>
+  <p>Today you’ll build a MenuScene, create Win/Lose scenes, add a glowing portal, and wrap up your game.</p>
   <ol>
-    <li>Create a new scene called <code>MenuScene</code>.</li>
-    <li>Add a Canvas with a title text and a <strong>Start Hunt</strong> button.</li>
-    <li>Create a script <code>MenuManager.cs</code> and attach it to a GameObject in the scene.</li>
-    <li>Link the Start button's OnClick to call <code>MenuManager.StartGame</code>.</li>
-    <li>Create <code>WinScene</code> and <code>LoseScene</code> with UI messages and Retry buttons.</li>
-    <li>In MainScene, add a portal object or arch (can be a glowing cube).</li>
-    <li>Attach <code>WinTrigger.cs</code> to it, and set its collider to Is Trigger.</li>
-    <li>Test the game: collect all gems → win scene. Let the timer expire → lose scene.</li>
-    <li>Go to <strong>File → Build Settings</strong> and click <strong>Add Open Scenes</strong>.</li>
-    <li>Make sure the order is: MenuScene, MainScene, WinScene, LoseScene.</li>
-    <li>Set <strong>MenuScene</strong> as the first one, then click <strong>Build and Run</strong>.</li>
-    <li>Enjoy your finished Cosmic Jungle Game!</li>
+    <li>Create a new scene called <code>MenuScene</code>. Add a Canvas, Text "Cosmic Jungle", and a button "Start Hunt".</li>
+    <li>Attach <code>MenuManager.cs</code> to a GameObject. Link the button’s OnClick to <code>StartGame</code>.</li>
+    <li>Create <code>WinScene</code>: Add Text "You win!" and Button "Play Again" (loads MainScene).</li>
+    <li>Create <code>LoseScene</code>: Add Text "Time’s up!" and Button "Retry" (loads MainScene).</li>
+    <li>In MainScene, create a sci-fi portal (using any object, cube, sphere, etc). Call this 'Portal' and add a collider if one doesn't exist, setting (Is Trigger) to True. </li>
+    <li>Attach <code>WinTrigger.cs</code> to the portal and verify the trigger loads <code>WinScene</code>.</li>
+    <li>Open Build Settings (File → Build Settings). Add all 4 scenes in order:
+      <ol>
+        <li>MenuScene</li>
+        <li>MainScene</li>
+        <li>WinScene</li>
+        <li>LoseScene</li>
+      </ol>
+    </li>
+    <li>Set <code>MenuScene</code> as the first scene. Click <strong>Build and Run</strong> or test from Play mode.</li>
+    <li>Play through: Start → Collect gems → Win. Wait out timer → Lose. You did it!</li>
   </ol>
 </body>
 </html>
