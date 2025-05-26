@@ -12,14 +12,25 @@
       background-color: #ffffff;
       color: #1a1a1a;
     }
-    h1, h2 {
+  
+    #canvas {
+      border: 1px solid black;
+      display: block;
+      margin: 32px auto;
+    }
+  
+    h1,
+    h2 {
       font-family: Georgia, serif;
       color: #9A936B;
     }
+  
     a {
       color: #0056b3;
     }
-    a.button, .button {
+  
+    a.button,
+    .button {
       background-color: #002d72;
       color: #fff !important;
       padding: 10px 20px;
@@ -28,10 +39,12 @@
       display: inline-block;
       margin-top: 10px;
     }
+  
     .button:hover {
       background-color: #9A936B;
       color: #000 !important;
     }
+  
     header {
       display: flex;
       justify-content: space-between;
@@ -40,58 +53,72 @@
       background-color: #002d72;
       color: white;
     }
+  
     header img {
       height: 50px;
     }
+  
     nav a {
       margin: 0 10px;
       color: #ffffff;
       text-decoration: none;
       font-weight: bold;
     }
+  
     nav a:hover {
       text-decoration: underline;
     }
+  
     .lesson-steps {
       margin-top: 2rem;
       padding: 1rem;
       background-color: #f9f9f9;
       border: 1px solid #ccc;
     }
+  
     .lesson-steps h2 {
       color: #182854;
     }
+  
     .lesson-steps ol {
       padding-left: 1.5rem;
     }
-    input[type="text"], input[type="password"] {
+  
+    input[type="text"],
+    input[type="password"] {
       padding: 8px;
       font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 4px;
       margin-right: 8px;
     }
+  
     main {
       max-width: 900px;
       margin: 0 auto;
       padding: 20px;
     }
+  
     table.schedule {
       width: 100%;
       border-collapse: collapse;
       margin-top: 2rem;
     }
-    table.schedule th, table.schedule td {
+  
+    table.schedule th,
+    table.schedule td {
       border: 1px solid #ccc;
       padding: 10px;
       text-align: left;
     }
+  
     table.schedule th {
       background-color: #f0f0f0;
     }
   </style>
 </head>
 <body>
+  
   <header>
     <img src="/assets/pitt-bradford-logo.png" alt="Pitt-Bradford Logo" />
     <nav>
@@ -105,16 +132,53 @@
   </header>
 
   <main>
-    <h1 class="text-4xl font-bold mb-4">Welcome to Video Game Development Camp!</h1>
+    <style>
+  .hero-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title-row .hero-img {
+    margin-left: 24px;
+    height: 64px;
+    width: auto;
+  }
+  @media (max-width: 600px) {
+    .hero-title-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .hero-title-row .hero-img {
+      margin-left: 0;
+      margin-top: 12px;
+      height: 48px;
+    }
+  }
+</style>
+<div class="hero-title-row">
+  <h1 class="text-4xl font-bold mb-4">Welcome to Video Game Development Camp!</h1>
+  <img class="hero-img" src="hero/hero-mini.png" alt="Hero Image" />
+</div>
     <p class="text-lg mb-4">Hosted by the University of Pittsburgh at Bradford's CIST Program</p>
-    <form id="login-form">
-      <input type="text" id="name" placeholder="Enter your name" required />
-      <input type="password" id="code" placeholder="Enter camp code" required />
-      <button type="submit" class="button">Enter</button>
-    </form>
-    <p class="mt-4">Don't have an account? <a href="register.html">Create one here</a></p>
-    <p><a class="button" href="webgl/index.html">Play the Camp Game now!</a></p>
-
+  
+    <p><a class="button" href="webgl/index.html" target="_blank">Play the Camp Game now!</a></p>
+<a class="button github-button" href="https://github.com/jcallinan/VideoGameProgrammingCamp2025" target="_blank">View the source code on GitHub</a>
+<style>
+  .github-button {
+    background-color: #24292e;
+    color: #fff !important;
+    border: 1px solid #24292e;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  .github-button:hover {
+    background-color: #fff;
+    color: #24292e !important;
+    border: 1px solid #24292e;
+    text-decoration: underline;
+  }
+</style>
     <h2 class="text-2xl font-bold mt-10">Camp Schedule</h2>
     <table class="schedule">
       <thead>
@@ -182,6 +246,7 @@
    
   </main>
 
-  <script src="js/main.js"></script>
+
+
 </body>
 </html>
